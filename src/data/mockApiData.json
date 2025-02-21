@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "category": "Frontend",
+    "company": "TechCorp",
+    "description": "We're looking for a Vue.js developer...",
+    "location": "Remote"
+  },
+  {
+    "id": 2,
+    "title": "Backend Developer",
+    "category": "Backend",
+    "company": "DevFirm",
+    "description": "Looking for a Node.js expert...",
+    "location": "New York"
+  },
+  {
+    "id": 3,
+    "title": "Full Stack Developer",
+    "category": "Fullstack",
+    "company": "DevFirm",
+    "description": "We're looking for a Vue.js developer...",
+    "location": "Remote"
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Designer",
+    "category": "Frontend",
+    "company": "TechCorp",
+    "description": "Looking for a UI/UX designer...",
+    "location": "San Francisco"
+  },
+  {
+    "id": 5,
+    "title": "DevOps Engineer",
+    "category": "DevOps",
+    "company": "DevFirm",
+    "description": "Looking for a DevOps engineer...",
+    "location": "Remote"
+  }
+]
