@@ -19,8 +19,15 @@ onMounted(async () => {
 });
 
 // Watch for changes to selectedCategory
-watch(selectedCategory, (newCategory) => {
-  jobsStore.filterJobs(newCategory);
+watch(selectedCategory, async (newCategory) => {
+  try {
+    loading.value = true;
+    await jobsStore.filterJobs(newCategory);
+  } catch (error) {
+    console.error('Error filtering jobs', error);
+  } finally {
+    loading.value = false;
+  }
 });
 </script>
 
@@ -51,9 +58,5 @@ watch(selectedCategory, (newCategory) => {
   justify-content: space-between;
   align-items: center;
 }
-.job-listing-component {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
-}
+
 </style>

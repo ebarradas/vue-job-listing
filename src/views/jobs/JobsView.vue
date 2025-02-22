@@ -1,9 +1,5 @@
 <script setup lang="ts">
-// Composition API imports if needed
-import { ref } from 'vue';
 import JobListingComponent from '@/components/jobs/JobListingComponent.vue';
-
-// Methods/computed/etc can be added here
 </script>
 
 <template>
@@ -13,5 +9,4 @@ import JobListingComponent from '@/components/jobs/JobListingComponent.vue';
 </template>
 
 <style lang="scss" scoped>
-/* Component styles */
 </style>

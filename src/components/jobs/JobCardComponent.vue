@@ -5,19 +5,14 @@ import type { JobType } from '@/types/jobTypes';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const title = ref('Job Card');
-const props = defineProps<{
+defineProps<{
   job: JobType;
 }>();
-
-const navigateToJob = (id: number) => {
-  router.push(`/jobs/${id}`);
-};
 
 </script>
 
 <template>
-  <div class="job-card-component" @click="navigateToJob(job.id)">
+  <div class="candidate-card-component">
     <h1 class="green">{{ job.title }}</h1>
     <div class="info">
       <span class="company">{{ job.company }}</span>
@@ -30,10 +25,11 @@ const navigateToJob = (id: number) => {
 
 <style lang="scss" scoped>
 
-.job-card-component {
+.candidate-card-component {
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
+  min-width: fit-content;
   .company {
     font-weight: 900;
   }

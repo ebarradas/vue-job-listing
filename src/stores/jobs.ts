@@ -21,12 +21,14 @@ export const useJobsStore = defineStore('jobs', () => {
     return job;
   }
 
-  function filterJobs(category: string) {
+  async function filterJobs(category: string) {
     if (category !== 'All') {
       jobs.value = jobsList.filter((job) => job.category === category);
     } else {
       jobs.value = jobsList;
     }
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   }
 
   return { getJobs, jobs, categories, filterJobs, getJobById };

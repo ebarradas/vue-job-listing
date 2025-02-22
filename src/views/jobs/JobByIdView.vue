@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { useJobsStore } from '@/stores/jobs';
 import JobCardComponent from '@/components/jobs/JobCardComponent.vue';
+import CandidateFormComponent from '@/components/candidates/CandidateFormComponent.vue';
 import type { JobType } from '@/types/jobTypes';
 
 const router = useRouter();
@@ -31,8 +32,11 @@ const goBack = () => {
     <div>Loading...</div>
   </div>
   <div v-else class="job-by-id-view">
-    <JobCardComponent v-if="job" :job="job" />
-    <div v-else>Job not found</div>
+    <div class="job-by-id-view-container" v-if="job">
+      <JobCardComponent :job="job" />
+      <CandidateFormComponent :jobId="Number(jobId)" />
+    </div>
+    <div v-else>Job not found. Please go back to the jobs list and select a new one.</div>
     <button @click="goBack">Go Back</button>
   </div>
 </template>
