@@ -9,6 +9,28 @@
       Hi there! This is a simple job listing app built with Vue 3 and set up with Vite.
     </p>
     <p>
+      Do the following steps to run the project:
+      <ol>
+        <li>
+          npm install
+        </li>
+        <li>
+          npm run dev
+        </li>
+        <li>
+          Open <a href="http://localhost:5173">http://localhost:5173</a> to see the app running
+        </li>
+      </ol>
+    </p>
+    <p>
+      It contains a few Vitest Specs, under the  <code>src/__tests__</code>. If you want to run the tests, use the following command:
+      <ul>
+        <li>
+          npm run test:unit
+        </li>
+      </ul>
+    </p>
+    <p>
       This project contains mainly of two different parts:
     </p>
     <ul>
