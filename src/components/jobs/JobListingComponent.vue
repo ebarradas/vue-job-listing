@@ -18,7 +18,6 @@ onMounted(async () => {
   }
 });
 
-// Watch for changes to selectedCategory
 watch(selectedCategory, async (newCategory) => {
   try {
     loading.value = true;
@@ -47,7 +46,12 @@ watch(selectedCategory, async (newCategory) => {
       </div>
     </div>
     <div class="job-listing-component">
-      <JobCardComponent v-for="job in jobsStore.jobs" :key="job.id" :job="job" />
+      <JobCardComponent
+        v-for="job in jobsStore.jobs"
+        :key="job.id"
+        :job="job"
+        :showApplyButton="true"
+      />
     </div>
   </div>
 </template>
@@ -59,4 +63,12 @@ watch(selectedCategory, async (newCategory) => {
   align-items: center;
 }
 
+.job-listing-component {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
 </style>

@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import { defineStore } from 'pinia';
 import type { CandidateType } from '@/types/candidateTypes';
 
@@ -23,7 +23,7 @@ export const useCandidateStore = defineStore('candidate', () => {
 
   const resetCandidates = async () => {
     candidates.value = [];
-    localStorage.removeItem('candidates');
+    localStorage.setItem('candidates', JSON.stringify(candidates.value));
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
   };

@@ -18,6 +18,14 @@ onMounted(async () => {
     isLoading.value = false;
   }
 });
+
+const resetCandidates = () => {
+  candidateStore.resetCandidates();
+  candidateList.value = candidateStore.candidates;
+};
+
+
+
 </script>
 
 <template>
@@ -29,7 +37,10 @@ onMounted(async () => {
       <div v-if="candidateStore.candidates.length === 0">
         <h1>No candidates found</h1>
       </div>
-      <CandidateListingComponent v-else :candidateList="candidateList" />
+      <div v-else>
+        <button @click="resetCandidates">Delete All Candidates</button>
+        <CandidateListingComponent :candidateList="candidateList" />
+      </div>
     </div>
   </main>
 </template>

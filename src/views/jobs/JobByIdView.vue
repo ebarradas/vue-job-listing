@@ -47,5 +47,12 @@ const goBack = () => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .job-by-id-view-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+  }
 }
 </style>

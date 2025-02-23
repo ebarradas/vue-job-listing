@@ -27,6 +27,7 @@ onMounted(async () => {
 <template>
   <div v-if="isLoading">Loading...</div>
   <div v-else >
+    <h1>Candidates</h1>
     <div v-for="candidate in candidateList" class="candidate-listing-component">
       <h3 class="green">{{ candidate.name }}</h3>
       <p>{{ candidate.email }}</p>
@@ -39,6 +40,6 @@ onMounted(async () => {
 .candidate-listing-component {
   border: 1px solid #ccc;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
 }
 </style>

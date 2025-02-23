@@ -63,20 +63,21 @@ watch(messageSent, (newValue) => {
 
 <template>
   <div class="candidate-form-component">
-    <div v-if="messageSent">
-      <h2>Message sent successfully!</h2>
-    </div>
+    <div v-if="messageSent" class="message-sent">
+      <h3>Message sent successfully!</h3>
+      <p>Thanks for sending your application. We will contact you soon as soon as possible.</p>
+    </div> 
     <form v-else @submit.prevent="handleSubmit">
       <h1>Apply for this job!</h1>
       <div class="input-container">
         <label for="name">Name</label>
         <input v-model="formContent.name" type="text" name="name" />
-        <div v-show="nameErrorMessage" class="error-message">{{ nameErrorMessage }}</div>
+        <div v-show="nameErrorMessage" class="error-message" id="name-error-message">{{ nameErrorMessage }}</div>
       </div>
       <div class="input-container">
         <label for="email">Email</label>
         <input v-model="formContent.email" type="email" name="email" />
-        <div v-show="emailErrorMessage" class="error-message">{{ emailErrorMessage }}</div>
+        <div v-show="emailErrorMessage" class="error-message" id="email-error-message">{{ emailErrorMessage }}</div>
       </div>
       <div class="input-container">
         <button :disabled="isLoading" type="submit">Submit</button>
@@ -89,8 +90,9 @@ watch(messageSent, (newValue) => {
 .candidate-form-component {
   border: 1px solid #ccc;
   padding: 10px;
-  margin: 10px;
-  min-width: fit-content;
+  margin: 10px 0;
+  width: 100%;
+  min-height: 300px;
   padding-bottom: 20px;
 
   form {
